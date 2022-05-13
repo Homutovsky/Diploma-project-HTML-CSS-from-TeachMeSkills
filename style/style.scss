@@ -1,7 +1,12 @@
+$hederBorderColor: #babbc5;
+$hederBorderColorTransperent: rgba(186, 187, 197, 0);
+$hederActiveColor: #E71414;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
 .container {
@@ -14,7 +19,7 @@
 
 .banner {
     background-image: url(../media/background__banner.png);
-    padding: 36px 0 120px;
+    padding-bottom: 120px;
 
     &::before {
         content: '';
@@ -33,10 +38,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid $hederBorderColor;
 
     &__list {
         display: flex;
         list-style-type: none;
+    }
+
+    &__wrap-img {
+        pointer-events: none;
+    }
+
+    &__item {
+        padding: 45px 29px;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $hederBorderColorTransperent;
+    }
+
+    &__item:hover {
+        border-bottom: 1px solid $hederBorderColor;
+    }
+
+    &__item:active {
+        border-bottom: 1px solid $hederActiveColor;
+        color: $hederActiveColor;
+    }
+
+    &__link:active {
+        color: $hederActiveColor;
     }
 
     &__link {
