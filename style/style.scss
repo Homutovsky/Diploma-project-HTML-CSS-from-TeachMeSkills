@@ -1,6 +1,15 @@
 $hederBorderColor: #babbc5;
-$hederBorderColorTransperent: rgba(186, 187, 197, 0);
+$hederBorderColorTransparent: transparent;
 $hederActiveColor: #E71414;
+$textColorWhite: #FFFFFF;
+$backgroundColorButton: #FF4343;
+$backgroundColorButtonHover: #E71414;
+$titleColorTitle: #2D3033;
+$titleColorText: #6C7279;
+$colorTransparent: transparent;
+$projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
+
+
 
 * {
     margin: 0;
@@ -15,13 +24,21 @@ $hederActiveColor: #E71414;
     padding: 0 15px;
     position: relative;
     z-index: 1;
+
+    @media (max-width:767px) {
+        max-width: 310px;
+    }
 }
+
 
 .banner {
     background-image: url(../media/background__banner.png);
     padding-bottom: 120px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 
-    &::before {
+    &::after {
         content: '';
         display: block;
         width: 100%;
@@ -32,6 +49,85 @@ $hederActiveColor: #E71414;
         background-color: #252B49;
         opacity: 0.8;
     }
+
+    &__title {
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 75px;
+        text-transform: uppercase;
+        color: $textColorWhite;
+        text-align: center;
+        margin-bottom: 31px;
+
+        @media (max-width:1024px) {
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 61px;
+        }
+
+        @media (max-width:767px) {
+            font-size: 36px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: $textColorWhite;
+        margin-bottom: 80px;
+
+        @media (max-width:1024px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 89px;
+        }
+
+        @media (max-width:767px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 49px;
+        }
+    }
+
+    &__button {
+        max-width: 369px;
+        width: 100%;
+        color: $textColorWhite;
+        background-color: $backgroundColorButton;
+        border: none;
+        margin: 0 auto;
+        padding: 29px;
+        display: block;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: $backgroundColorButtonHover;
+
+        }
+
+        &:active {
+            background-color: $backgroundColorButton;
+            box-shadow: 4px 4px 30px #FF4343;
+        }
+
+        @media (max-width:1024px) {
+            max-width: 314px;
+        }
+
+        @media (max-width:767px) {
+            max-width: 279px;
+            padding: 20px;
+        }
+    }
 }
 
 .header {
@@ -39,6 +135,25 @@ $hederActiveColor: #E71414;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $hederBorderColor;
+    margin-bottom: 130px;
+
+    @media (max-width: 767px) {
+        border-bottom: none;
+        margin-bottom: 157px;
+    }
+
+    &__nav {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__wrap {
+        @media (max-width: 767px) {
+            padding: 22px 19px;
+        }
+    }
+
 
     &__list {
         display: flex;
@@ -50,29 +165,170 @@ $hederActiveColor: #E71414;
     }
 
     &__item {
-        padding: 45px 29px;
         font-weight: 700;
         font-size: 13px;
         line-height: 15px;
         text-transform: uppercase;
-        border-bottom: 1px solid $hederBorderColorTransperent;
-    }
 
-    &__item:hover {
-        border-bottom: 1px solid $hederBorderColor;
-    }
-
-    &__item:active {
-        border-bottom: 1px solid $hederActiveColor;
-        color: $hederActiveColor;
-    }
-
-    &__link:active {
-        color: $hederActiveColor;
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+            padding: 45px 22px;
+        }
     }
 
     &__link {
+        display: inline-block;
+        padding: 43px 29px;
         text-decoration: none;
-        color: #fff;
+        border-bottom: 2px solid $hederBorderColorTransparent;
+        color: $textColorWhite;
+
+        &:hover {
+            border-bottom: 2px solid $hederBorderColor;
+        }
+
+        &:active {
+            color: $hederActiveColor;
+            border-bottom: 2px solid $hederActiveColor;
+        }
+
+    }
+
+}
+
+.advantages {
+    padding: 116px 0;
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 31px;
+        row-gap: 89px;
+
+        @media (max-width: 1024px) {
+            row-gap: 49px;
+        }
+
+        @media (max-width:767px) {
+            grid-template-columns: 1fr;
+            row-gap: 42px;
+        }
+    }
+
+    &__article {
+        text-align: center;
+    }
+
+    &__object {
+        margin-bottom: 29px;
+        height: 100px;
+        width: 100px;
+
+        @media (max-width: 1024px) {
+            width: 85px;
+            height: 84px;
+        }
+
+        @media (max-width: 767px) {
+            width: 75px;
+            height: 75px;
+        }
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: $titleColorTitle;
+        margin-bottom: 20px;
+
+        @media (max-width: 1024px) {
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 36px;
+            line-height: 42px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 21px;
+        color: $titleColorText;
+
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    &__project {
+        position: relative;
+        background-color:#FF4343;
+        
+        // &:hover {
+        //     background-color: $projectsHoverBackgorundColor;
+        // }
+    }
+
+    &__project::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__wrap {
+        position: absolute;
+        top:  30%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__title {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: $textColorWhite;
+        margin-bottom: 50px;
+        color: $colorTransparent;
+        display: inline-block;
+        
+        &:hover {
+            color:$textColorWhite;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 21px;
+        color: $textColorWhite;
+        color: $colorTransparent;
+        &:hover {
+            color:$textColorWhite;
+        }
     }
 }
