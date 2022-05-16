@@ -169,12 +169,6 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
         font-size: 13px;
         line-height: 15px;
         text-transform: uppercase;
-
-        @media (max-width: 1024px) {
-            font-size: 12px;
-            line-height: 14px;
-            padding: 45px 22px;
-        }
     }
 
     &__link {
@@ -183,6 +177,11 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
         text-decoration: none;
         border-bottom: 2px solid $hederBorderColorTransparent;
         color: $textColorWhite;
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+            padding: 45px 22px;
+        }
 
         &:hover {
             border-bottom: 2px solid $hederBorderColor;
@@ -275,7 +274,14 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
 .projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
+    margin-bottom: 114px;
+    @media (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
+    @media (max-width: 767px) {
+        margin-bottom: 35px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     &__project {
         position: relative;
@@ -330,6 +336,11 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
         color: $colorTransparent;
         display: inline-block;
 
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
     }
 
     &__text {
@@ -337,5 +348,10 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
         line-height: 21px;
         color: $textColorWhite;
         color: $colorTransparent;
+
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
 }
