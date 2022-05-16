@@ -7,7 +7,7 @@ $backgroundColorButtonHover: #E71414;
 $titleColorTitle: #2D3033;
 $titleColorText: #6C7279;
 $colorTransparent: transparent;
-$projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
+$projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
 
 
 
@@ -276,13 +276,9 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
+
     &__project {
         position: relative;
-        background-color:#FF4343;
-        
-        // &:hover {
-        //     background-color: $projectsHoverBackgorundColor;
-        // }
     }
 
     &__project::before {
@@ -302,9 +298,26 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
 
     &__wrap {
         position: absolute;
-        top:  30%;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: $projectsHoverBackgorundColor;
+            position: absolute;
+        }
+
+        &:hover h2,
+        &:hover p {
+            color: $textColorWhite;
+        }
     }
 
     &__title {
@@ -316,10 +329,7 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
         margin-bottom: 50px;
         color: $colorTransparent;
         display: inline-block;
-        
-        &:hover {
-            color:$textColorWhite;
-        }
+
     }
 
     &__text {
@@ -327,8 +337,5 @@ $projectsHoverBackgorundColor: rgba(255, 67, 67,0.8);
         line-height: 21px;
         color: $textColorWhite;
         color: $colorTransparent;
-        &:hover {
-            color:$textColorWhite;
-        }
     }
 }
