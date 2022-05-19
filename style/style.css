@@ -46,6 +46,16 @@
   opacity: 0.8;
 }
 
+.banner__wrap {
+  padding-top: 244px;
+}
+
+@media (max-width: 767px) {
+  .banner__wrap {
+    padding-top: 114px;
+  }
+}
+
 .banner__title {
   font-weight: 900;
   font-size: 64px;
@@ -111,16 +121,26 @@
   line-height: 28px;
   text-transform: uppercase;
   cursor: pointer;
+  -webkit-transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
 
 .banner__button:hover {
   background-color: #E71414;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
 }
 
 .banner__button:active {
   background-color: #FF4343;
   -webkit-box-shadow: 4px 4px 30px #FF4343;
           box-shadow: 4px 4px 30px #FF4343;
+  -webkit-transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
 
 @media (max-width: 1024px) {
@@ -136,18 +156,46 @@
   }
 }
 
+@-webkit-keyframes headerAnimation {
+  0% {
+    color: #FFFFFF;
+  }
+  50% {
+    color: #9673d8;
+    border-bottom: 2px solid #9673d8;
+  }
+  100% {
+    color: #dfb3d9;
+    border-bottom: 2px solid #dfb3d9;
+  }
+}
+
+@keyframes headerAnimation {
+  0% {
+    color: #FFFFFF;
+  }
+  50% {
+    color: #9673d8;
+    border-bottom: 2px solid #9673d8;
+  }
+  100% {
+    color: #dfb3d9;
+    border-bottom: 2px solid #dfb3d9;
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #babbc5;
   margin-bottom: 130px;
+  position: fixed;
+  max-width: 1140px;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -157,15 +205,24 @@
   }
 }
 
-@media (max-width: 767px) {
-  .header__nav {
-    display: none;
-  }
+.header__wrap {
+  width: 25%;
 }
 
 @media (max-width: 767px) {
   .header__wrap {
     padding: 22px 19px;
+    width: 100%;
+  }
+}
+
+.header__nav {
+  width: 75%;
+}
+
+@media (max-width: 767px) {
+  .header__nav {
+    display: none;
   }
 }
 
@@ -173,6 +230,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   list-style-type: none;
 }
 
@@ -185,6 +245,8 @@
   font-size: 13px;
   line-height: 15px;
   text-transform: uppercase;
+  -webkit-animation: headerAnimation 0.4s;
+          animation: headerAnimation 0.4s;
 }
 
 .header__link {
@@ -205,11 +267,17 @@
 
 .header__link:hover {
   border-bottom: 2px solid #babbc5;
+  -webkit-animation: headerAnimation 0.4s;
+          animation: headerAnimation 0.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .header__link:active {
   color: #E71414;
   border-bottom: 2px solid #E71414;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
 }
 
 .advantages {
@@ -223,6 +291,12 @@
 }
 
 @media (max-width: 1024px) {
+  .advantages {
+    padding: 78px 0 80px;
+  }
+}
+
+@media (max-width: 767px) {
   .advantages__container {
     max-width: 280px;
   }
@@ -583,8 +657,17 @@
   }
 }
 
-.staff__messenger img {
-  pointer-events: none;
+.staff__link {
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.staff__link:hover path {
+  fill: #823bd3;
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .slider {
@@ -737,6 +820,10 @@
   margin: 0 auto;
   cursor: pointer;
   display: inline-block;
+  -webkit-transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
 
 @media (max-width: 1024px) {
@@ -759,12 +846,18 @@
 
 .download__button:hover {
   background-color: #E71414;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
 }
 
 .download__button:active {
   background-color: #FF4343;
   -webkit-box-shadow: 4px 4px 30px #FF4343;
           box-shadow: 4px 4px 30px #FF4343;
+  -webkit-transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear;
+  transition: background-color 0.3s linear, box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
 
 .footer {
@@ -894,8 +987,17 @@
   }
 }
 
-.footer__messenger img {
-  pointer-events: none;
+.footer__link {
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.footer__link:hover path {
+  fill: #823bd3;
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .footer__text-second {
