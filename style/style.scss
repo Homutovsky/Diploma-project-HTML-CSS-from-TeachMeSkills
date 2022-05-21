@@ -14,7 +14,14 @@ $sliderBackgroundColor: #5C3249;
 $footerBackgroundColor: #353C65;
 $footerBackgroundCoperight: #2C3154;
 $footerColorTextCoperight: #808080;
+$messengerHoverColor: #823bd3;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
 
 @mixin messengers {
     display: flex;
@@ -27,7 +34,7 @@ $footerColorTextCoperight: #808080;
     justify-content: center;
     height: 39px;
     width: 39px;
-    border: 1px solid #C6CBCD;
+
 
     @media (max-width: 1024px) {
         height: 32px;
@@ -35,12 +42,46 @@ $footerColorTextCoperight: #808080;
     }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+@keyframes headerAnimation {
+    0% {
+        color: $textColorWhite;
+    }
+
+    50% {
+        color: #9673d8;
+        border-bottom: 2px solid #9673d8;
+    }
+
+    100% {
+        color: #dfb3d9;
+        border-bottom: 2px solid #dfb3d9;
+    }
 }
+
+@keyframes projectHoverMove {
+    0% {
+        transform:translateX(-16px);
+    }
+    16% {
+        transform:translateX(32px);
+    }
+    33% {
+        transform:translateX(-8px);
+    }
+    50% {
+        transform:translateX(16px);
+    }
+    64% {
+        transform:translateX(-4px);
+    }
+    83% {
+        transform:translateX(8px);
+    }
+    100% {
+        transform:translateX(0px);
+    }
+}
+
 
 .container {
     max-width: 1170px;
@@ -165,22 +206,6 @@ $footerColorTextCoperight: #808080;
             max-width: 279px;
             padding: 20px;
         }
-    }
-}
-
-@keyframes headerAnimation {
-    0% {
-        color: $textColorWhite;
-    }
-
-    50% {
-        color: #9673d8;
-        border-bottom: 2px solid #9673d8;
-    }
-
-    100% {
-        color: #dfb3d9;
-        border-bottom: 2px solid #dfb3d9;
     }
 }
 
@@ -373,6 +398,7 @@ $footerColorTextCoperight: #808080;
 
     &__project {
         position: relative;
+        transition: all 0.3s linear;
     }
 
     &__project::before {
@@ -406,11 +432,14 @@ $footerColorTextCoperight: #808080;
         &:hover {
             background-color: $projectsHoverBackgorundColor;
             position: absolute;
+            transition: all 0.3s linear;
+            animation: projectHoverMove 0.9s ease;
         }
 
         &:hover h2,
         &:hover p {
             color: $textColorWhite;
+            transition: all 0.3s linear;
         }
     }
 
@@ -485,6 +514,15 @@ $footerColorTextCoperight: #808080;
 
     &__img {
         margin-bottom: 30px;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-top: 270px;
+            position: absolute;
+
+        }
 
         @media (max-width: 1024px) {
             margin-bottom: 25;
@@ -557,12 +595,18 @@ $footerColorTextCoperight: #808080;
     }
 
     &__link {
-        transition: fill 0.3s linear;
+        transition: all 0.3s linear;
+        border: 1px solid #C6CBCD;
+
+        &:hover {
+            border: 1px solid $messengerHoverColor;
+            transition: all 0.3s linear;
+        }
     }
 
     &__link:hover path {
-        fill: #823bd3;
-        transition: fill 0.3s linear;
+        fill: $messengerHoverColor;
+        transition: all 0.3s linear;
         animation-fill-mode: forwards;
     }
 }
@@ -741,12 +785,18 @@ $footerColorTextCoperight: #808080;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 29px;
+        margin-bottom: 71px;
         grid-template-areas: 'title-first title-second title-third'
             'text-first messengers text-second';
+
+        @media (max-width: 1024px) {
+            margin-bottom: 41px;
+        }
 
         @media (max-width: 767px) {
             row-gap: 34px;
             max-width: 320px;
+            margin-bottom: 33px;
             grid-template-columns: 1fr;
             grid-template-areas:
                 'title-first'
@@ -813,6 +863,12 @@ $footerColorTextCoperight: #808080;
 
     &__link {
         transition: fill 0.3s linear;
+        border: 1px solid #C6CBCD;
+
+        &:hover {
+            border: 1px solid $messengerHoverColor;
+            transition: all 0.3s linear;
+        }
     }
 
     &__link:hover path {
