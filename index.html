@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Raleway:wght@400;500;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -437,18 +438,105 @@
     </section>
 
     <section class="slider">
-        <div class="slider__img-wrap">
-            <img src="media/slider__img-first.jpg" alt="">
+        <div class="swiper slider__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slider__wrap">
+                        <div class="slider__img-wrap">
+                            <img src="media/slider__img-first.jpg" alt="">
+                        </div>
+                        <div class="slider__text-wrap">
+                            <h2 class="slider__title">
+                                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio
+                                dui.
+                                Aenean eu leo
+                                quam...”
+                            </h2>
+                            <p class="slider__text">
+                                Susan Sims, Interaction Designer at XYZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider__wrap">
+                        <div class="slider__img-wrap">
+                            <img src="media/slider__img-first.jpg" alt="">
+                        </div>
+                        <div class="slider__text-wrap">
+                            <h2 class="slider__title">
+                                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio
+                                dui.
+                                Aenean eu leo
+                                quam...”
+                            </h2>
+                            <p class="slider__text">
+                                Susan Sims, Interaction Designer at XYZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider__wrap">
+                        <div class="slider__img-wrap">
+                            <img src="media/slider__img-first.jpg" alt="">
+                        </div>
+                        <div class="slider__text-wrap">
+                            <h2 class="slider__title">
+                                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio
+                                dui.
+                                Aenean eu leo
+                                quam...”
+                            </h2>
+                            <p class="slider__text">
+                                Susan Sims, Interaction Designer at XYZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider__wrap">
+                        <div class="slider__img-wrap">
+                            <img src="media/slider__img-first.jpg" alt="">
+                        </div>
+                        <div class="slider__text-wrap">
+                            <h2 class="slider__title">
+                                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio
+                                dui.
+                                Aenean eu leo
+                                quam...”
+                            </h2>
+                            <p class="slider__text">
+                                Susan Sims, Interaction Designer at XYZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider__wrap">
+                        <div class="slider__img-wrap">
+                            <img src="media/slider__img-first.jpg" alt="">
+                        </div>
+                        <div class="slider__text-wrap">
+                            <h2 class="slider__title">
+                                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio
+                                dui.
+                                Aenean eu leo
+                                quam...”
+                            </h2>
+                            <p class="slider__text">
+                                Susan Sims, Interaction Designer at XYZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="slider__text-wrap">
-            <h2 class="slider__title">
-                “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo
-                quam...”
-            </h2>
-            <p class="slider__text">
-                Susan Sims, Interaction Designer at XYZ
-            </p>
-        </div>
+
+
+
+
     </section>
 
     <section class="download">
@@ -514,6 +602,16 @@
             </p>
         </div>
     </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".slider__swiper", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 
 </html>
