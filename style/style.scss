@@ -9,6 +9,7 @@ $titleColorTitle: #2D3033;
 $titleColorText: #6C7279;
 $colorTransparent: transparent;
 $projectsHoverBackgorundColor: rgba(255, 67, 67, 0.8);
+$projectActiveBacgroundColor: #B90C0C;
 $staffSubtitleColor: #FF4343;
 $sliderBackgroundColor: #5C3249;
 $footerBackgroundColor: #353C65;
@@ -58,6 +59,7 @@ $messengerHoverColor: #823bd3;
     }
 }
 
+
 @keyframes projectHoverMove {
     0% {
         transform: translateX(-16px);
@@ -88,6 +90,14 @@ $messengerHoverColor: #823bd3;
     }
 }
 
+@keyframes projectActiveMove {
+    0% { 
+        transform: scale(0.9);
+    }
+    100% {
+        transform: translateZ(1);
+    }
+}
 
 .container {
     max-width: 1170px;
@@ -104,6 +114,8 @@ $messengerHoverColor: #823bd3;
 .header {
     width: 100%;
     position: fixed;
+    left: 0;
+    top: 0;
     z-index: 2;
 
     &__container {
@@ -115,14 +127,25 @@ $messengerHoverColor: #823bd3;
 
         @media (max-width: 767px) {
             border-bottom: none;
-            margin-bottom: 70px;
         }
     }
 
 
     &__wrap {
+        display: flex;
         @media (max-width: 767px) {
-            padding: 22px 19px;
+            width:100%;
+            justify-content: space-between;
+            align-items: center;
+            padding:20px 20px 0 20px;
+            column-gap: 20px;
+        }
+    }
+
+    &__burger {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
         }
     }
 
@@ -152,7 +175,9 @@ $messengerHoverColor: #823bd3;
 
     &__link {
         display: inline-block;
-        padding: 43px 29px;
+        padding: 43px 10px;
+        min-width:134px;
+        text-align: center;
         text-decoration: none;
         border-bottom: 2px solid $hederBorderColorTransparent;
         color: $textColorWhite;
@@ -162,7 +187,8 @@ $messengerHoverColor: #823bd3;
         @media (max-width: 1024px) {
             font-size: 12px;
             line-height: 14px;
-            padding: 45px 22px;
+            padding: 45px 8px;
+            min-width:112px;
         }
 
         &:hover {
@@ -299,11 +325,6 @@ $messengerHoverColor: #823bd3;
         padding: 78px 0 80px;
     }
 
-    &__container {
-        @media (max-width: 767px) {
-            max-width: 280px;
-        }
-    }
 
     &__wrap {
         display: grid;
@@ -428,14 +449,17 @@ $messengerHoverColor: #823bd3;
         &:hover {
             background-color: $projectsHoverBackgorundColor;
             position: absolute;
-            transition: all 0.3s linear;
+            transition: all .3s linear;
             animation: projectHoverMove 0.9s ease;
         }
 
         &:hover h2,
         &:hover p {
             color: $textColorWhite;
-            transition: all 0.3s linear;
+        }
+        &:active {
+            background-color: $projectActiveBacgroundColor;
+            animation: projectActiveMove 3s ease;
         }
     }
 
@@ -481,7 +505,6 @@ $messengerHoverColor: #823bd3;
 
     &__wrap {
         display: flex;
-        align-items: center;
         column-gap: 30px;
 
         @media (max-width: 767px) {
@@ -494,6 +517,8 @@ $messengerHoverColor: #823bd3;
     &__article {
         max-width: calc((100% - 90px) / 4);
         width: 100%;
+        display:flex;
+        flex-direction: column;
 
         &:last-of-type {
             @media (max-width: 767px) {
@@ -586,6 +611,7 @@ $messengerHoverColor: #823bd3;
     }
 
     &__messengers {
+        margin: auto 0 0 0;
         @include messengers();
     }
 
@@ -598,10 +624,19 @@ $messengerHoverColor: #823bd3;
             border: 1px solid $messengerHoverColor;
             transition: all 0.3s linear;
         }
+        &:active {
+            border: 1px solid $projectActiveBacgroundColor;
+            transition: all 0.3s linear;
+        }
     }
 
     &__link:hover path {
         fill: $messengerHoverColor;
+        transition: all 0.3s linear;
+        animation-fill-mode: forwards;
+    }
+    &__link:active path {
+        fill: $projectActiveBacgroundColor;
         transition: all 0.3s linear;
         animation-fill-mode: forwards;
     }
@@ -636,6 +671,7 @@ $messengerHoverColor: #823bd3;
         width: 50%;
         padding: 143px 170px 143px 129px;
         background-color: $sliderBackgroundColor;
+        align-self: center;
 
         @media (max-width: 1024px) {
             padding: 68px 104px 115px 88px;
@@ -682,13 +718,15 @@ $messengerHoverColor: #823bd3;
 }
 
 .swiper {
-    overflow: initial;
+    
 
     &-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-        bottom: -35px;
+        position: static;
+    margin-top: 30px;
+        
     }
 
     &-pagination-bullet {
@@ -812,26 +850,21 @@ $messengerHoverColor: #823bd3;
 
 .footer {
     background-color: $footerBackgroundColor;
-    padding-top: 71px;
     text-align: center;
-
-    @media (max-width: 767px) {
-        padding-top: 34px;
-    }
 
     &__container {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 71px;
+        padding: 71px 0;
 
         @media (max-width: 1024px) {
-            margin-bottom: 41px;
+            padding: 41px 0;
         }
 
         @media (max-width: 767px) {
             flex-wrap: wrap;
             row-gap: 34px;
-            margin-bottom: 33px;
+            padding: 33px 0;
         }
     }
 
@@ -930,6 +963,7 @@ $messengerHoverColor: #823bd3;
         line-height: 21px;
         text-transform: capitalize;
         color: $footerColorTextCoperight;
+        padding: 0 15px;
 
         &-span {
             color: $textColorWhite;
