@@ -91,9 +91,10 @@ $messengerHoverColor: #823bd3;
 }
 
 @keyframes projectActiveMove {
-    0% { 
+    0% {
         transform: scale(0.9);
     }
+
     100% {
         transform: translateZ(1);
     }
@@ -133,17 +134,37 @@ $messengerHoverColor: #823bd3;
 
     &__wrap {
         display: flex;
+
+        &-active {
+            display: none;
+        }
+
         @media (max-width: 767px) {
-            width:100%;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
-            padding:20px 20px 0 20px;
+            padding: 20px 20px 0 20px;
             column-gap: 20px;
         }
+
+    }
+
+    &__burger-close {
+        display: none;
     }
 
     &__burger {
         display: none;
+
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+
+    &__burger-active {
+        display: none;
+
+
         @media (max-width: 767px) {
             display: block;
         }
@@ -176,7 +197,7 @@ $messengerHoverColor: #823bd3;
     &__link {
         display: inline-block;
         padding: 43px 10px;
-        min-width:134px;
+        min-width: 134px;
         text-align: center;
         text-decoration: none;
         border-bottom: 2px solid $hederBorderColorTransparent;
@@ -188,7 +209,7 @@ $messengerHoverColor: #823bd3;
             font-size: 12px;
             line-height: 14px;
             padding: 45px 8px;
-            min-width:112px;
+            min-width: 112px;
         }
 
         &:hover {
@@ -204,6 +225,57 @@ $messengerHoverColor: #823bd3;
         }
 
     }
+
+}
+
+.active {
+    .header {
+        position: relative;
+        background-color: #000000;
+    }
+
+    .header__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__burger-close {
+        @media (max-width: 767px) {
+            display: block
+        }
+    }
+
+    .header__burger {
+        display: none;
+    }
+
+    .header__wrap-active {
+        @media (max-width: 767px) {
+            display: block
+        }
+    }
+
+    .header__list-active {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+
+    .header__link-active {
+        color: $textColorWhite;
+        text-decoration: none;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 2px solid $hederBorderColor;
+            animation: headerAnimation 0.4s;
+            animation-fill-mode: forwards;
+        }
+    }
+
 
 }
 
@@ -457,6 +529,7 @@ $messengerHoverColor: #823bd3;
         &:hover p {
             color: $textColorWhite;
         }
+
         &:active {
             background-color: $projectActiveBacgroundColor;
             animation: projectActiveMove 3s ease;
@@ -517,7 +590,7 @@ $messengerHoverColor: #823bd3;
     &__article {
         max-width: calc((100% - 90px) / 4);
         width: 100%;
-        display:flex;
+        display: flex;
         flex-direction: column;
 
         &:last-of-type {
@@ -624,6 +697,7 @@ $messengerHoverColor: #823bd3;
             border: 1px solid $messengerHoverColor;
             transition: all 0.3s linear;
         }
+
         &:active {
             border: 1px solid $projectActiveBacgroundColor;
             transition: all 0.3s linear;
@@ -635,6 +709,7 @@ $messengerHoverColor: #823bd3;
         transition: all 0.3s linear;
         animation-fill-mode: forwards;
     }
+
     &__link:active path {
         fill: $projectActiveBacgroundColor;
         transition: all 0.3s linear;
@@ -666,6 +741,25 @@ $messengerHoverColor: #823bd3;
         }
     }
 
+    &__img-large {
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__img-medium {
+        display: none;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            display: block;
+        }
+    }
+
+    &__img-small {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
 
     &__text-wrap {
         width: 50%;
@@ -718,15 +812,14 @@ $messengerHoverColor: #823bd3;
 }
 
 .swiper {
-    
 
     &-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
         position: static;
-    margin-top: 30px;
-        
+        margin-top: 30px;
+
     }
 
     &-pagination-bullet {
@@ -855,7 +948,7 @@ $messengerHoverColor: #823bd3;
     &__container {
         display: flex;
         justify-content: space-between;
-        padding: 71px 0;
+        padding: 71px 15px;
 
         @media (max-width: 1024px) {
             padding: 41px 0;
@@ -932,13 +1025,24 @@ $messengerHoverColor: #823bd3;
         border: 1px solid #C6CBCD;
 
         &:hover {
-            border: 1px solid $messengerHoverColor;
+            border: 1px solid #d16060;
+            transition: all 0.3s linear;
+        }
+
+        &:active {
+            border: 1px solid #160b0b;
             transition: all 0.3s linear;
         }
     }
 
     &__link:hover path {
-        fill: #823bd3;
+        fill: #d16060;
+        transition: fill 0.3s linear;
+        animation-fill-mode: forwards;
+    }
+
+    &__link:active path {
+        fill: #160b0b;
         transition: fill 0.3s linear;
         animation-fill-mode: forwards;
     }
