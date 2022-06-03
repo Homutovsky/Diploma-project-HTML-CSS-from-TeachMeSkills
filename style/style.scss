@@ -119,6 +119,10 @@ $messengerHoverColor: #823bd3;
     top: 0;
     z-index: 2;
 
+    @media (max-width: 767px) {
+        padding: 20px 0;
+    }
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -143,7 +147,6 @@ $messengerHoverColor: #823bd3;
             width: 100%;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 20px 0 20px;
             column-gap: 20px;
         }
 
@@ -237,7 +240,11 @@ $messengerHoverColor: #823bd3;
     .header__container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+    }
+
+    .header__burger {
+        display: none;
     }
 
     .header__burger-close {
@@ -246,13 +253,16 @@ $messengerHoverColor: #823bd3;
         }
     }
 
-    .header__burger {
-        display: none;
+
+    .header__wrap {
+        margin-bottom: 25px;
     }
 
     .header__wrap-active {
         @media (max-width: 767px) {
-            display: block
+            display: inline;
+            width: 100%;
+            margin-left: 20px;
         }
     }
 
@@ -287,8 +297,7 @@ $messengerHoverColor: #823bd3;
     position: relative;
 
     @media (max-width:767px) {
-        padding-bottom: 52px;
-        padding-top: 114px
+        padding: 114px 0 52px;
     }
 
     &::after {
@@ -766,6 +775,10 @@ $messengerHoverColor: #823bd3;
         padding: 143px 170px 143px 129px;
         background-color: $sliderBackgroundColor;
         align-self: center;
+
+        @media (max-width: 1185px) {
+            padding: 140px 80px 115px 100px;
+        }
 
         @media (max-width: 1024px) {
             padding: 68px 104px 115px 88px;
