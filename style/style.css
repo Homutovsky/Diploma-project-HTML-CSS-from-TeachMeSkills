@@ -205,10 +205,6 @@
   }
 }
 
-.header__burger-active {
-  display: none;
-}
-
 @media (max-width: 767px) {
   .header {
     display: block;
@@ -317,7 +313,7 @@
 }
 
 .active .header__burger {
-  background-image: url(/media/header__burger-close.svg);
+  background-image: url(../media/header__burger-close.svg);
 }
 
 .active .header__nav {

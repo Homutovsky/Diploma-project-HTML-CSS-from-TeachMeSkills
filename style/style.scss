@@ -167,10 +167,6 @@ $messengerHoverColor: #823bd3;
         }
     }
 
-    &__burger-active {
-        display: none;
-    }
-
     @media (max-width: 767px) {
         display: block;
     }
@@ -262,7 +258,7 @@ $messengerHoverColor: #823bd3;
     }
 
     .header__burger {
-        background-image: url(/media/header__burger-close.svg);
+        background-image: url(../media/header__burger-close.svg);
     }
 
     .header__nav {
