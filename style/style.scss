@@ -152,12 +152,15 @@ $messengerHoverColor: #823bd3;
 
     }
 
-    &__burger-close {
-        display: none;
-    }
 
     &__burger {
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-repeat: no-repeat;
+        background-color: transparent;
         display: none;
+        background-image: url(../media/header__burger.svg);
 
         @media (max-width: 767px) {
             display: block;
@@ -166,12 +169,12 @@ $messengerHoverColor: #823bd3;
 
     &__burger-active {
         display: none;
-
-
-        @media (max-width: 767px) {
-            display: block;
-        }
     }
+
+    @media (max-width: 767px) {
+        display: block;
+    }
+
 
     &__nav {
         @media (max-width: 767px) {
@@ -182,6 +185,14 @@ $messengerHoverColor: #823bd3;
     &__list {
         display: flex;
         list-style-type: none;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            list-style-type: none;
+            row-gap: 20px;
+            color: $textColorWhite;
+            text-decoration: none;
+            font-size: 30px;
+        }
     }
 
     &__wrap-img {
@@ -205,15 +216,22 @@ $messengerHoverColor: #823bd3;
         text-decoration: none;
         border-bottom: 2px solid $hederBorderColorTransparent;
         color: $textColorWhite;
-
-
-
+        
         @media (max-width: 1024px) {
             font-size: 12px;
             line-height: 14px;
             padding: 45px 8px;
             min-width: 112px;
         }
+        @media (max-width: 767px) {
+            color: $textColorWhite;
+            text-decoration: none;
+            font-size: 30px;
+            padding: 15px 0;
+        }
+
+
+        
 
         &:hover {
             border-bottom: 2px solid $hederBorderColor;
@@ -228,8 +246,8 @@ $messengerHoverColor: #823bd3;
         }
 
     }
-
 }
+
 
 .active {
     .header {
@@ -244,48 +262,18 @@ $messengerHoverColor: #823bd3;
     }
 
     .header__burger {
-        display: none;
+        background-image: url(/media/header__burger-close.svg);
     }
 
-    .header__burger-close {
-        @media (max-width: 767px) {
-            display: block
-        }
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
 
     .header__wrap {
         margin-bottom: 25px;
     }
-
-    .header__wrap-active {
-        @media (max-width: 767px) {
-            display: inline;
-            width: 100%;
-            margin-left: 20px;
-        }
-    }
-
-    .header__list-active {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        row-gap: 20px;
-    }
-
-
-    .header__link-active {
-        color: $textColorWhite;
-        text-decoration: none;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 2px solid $hederBorderColor;
-            animation: headerAnimation 0.4s;
-            animation-fill-mode: forwards;
-        }
-    }
-
 
 }
 

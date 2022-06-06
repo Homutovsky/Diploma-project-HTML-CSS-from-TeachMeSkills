@@ -189,12 +189,14 @@
   }
 }
 
-.header__burger-close {
-  display: none;
-}
-
 .header__burger {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-repeat: no-repeat;
+  background-color: transparent;
   display: none;
+  background-image: url(../media/header__burger.svg);
 }
 
 @media (max-width: 767px) {
@@ -208,7 +210,7 @@
 }
 
 @media (max-width: 767px) {
-  .header__burger-active {
+  .header {
     display: block;
   }
 }
@@ -224,6 +226,20 @@
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
+}
+
+@media (max-width: 767px) {
+  .header__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    list-style-type: none;
+    row-gap: 20px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 30px;
+  }
 }
 
 .header__wrap-img {
@@ -255,6 +271,15 @@
     line-height: 14px;
     padding: 45px 8px;
     min-width: 112px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 15px 0;
   }
 }
 
@@ -292,29 +317,10 @@
 }
 
 .active .header__burger {
-  display: none;
+  background-image: url(/media/header__burger-close.svg);
 }
 
-@media (max-width: 767px) {
-  .active .header__burger-close {
-    display: block;
-  }
-}
-
-.active .header__wrap {
-  margin-bottom: 25px;
-}
-
-@media (max-width: 767px) {
-  .active .header__wrap-active {
-    display: inline;
-    width: 100%;
-    margin-left: 20px;
-  }
-}
-
-.active .header__list-active {
-  list-style-type: none;
+.active .header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,21 +328,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.active .header__link-active {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 30px;
-}
-
-.active .header__link-active:hover {
-  border-bottom: 2px solid #babbc5;
-  -webkit-animation: headerAnimation 0.4s;
-          animation: headerAnimation 0.4s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.active .header__wrap {
+  margin-bottom: 25px;
 }
 
 .banner {
