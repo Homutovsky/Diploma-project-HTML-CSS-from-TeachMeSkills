@@ -251,6 +251,13 @@
           animation: headerAnimation 0.4s;
 }
 
+@media (max-width: 767px) {
+  .header__item {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+
 .header__link {
   display: inline-block;
   padding: 43px 10px;
@@ -292,6 +299,14 @@
   border-bottom: 2px solid #E71414;
   -webkit-animation-fill-mode: none;
           animation-fill-mode: none;
+}
+
+@media (max-width: 767px) {
+  .header__link:active {
+    -webkit-animation: headerAnimation 0.4s;
+            animation: headerAnimation 0.4s;
+    border-bottom: 2px solid #dfb3d9;
+  }
 }
 
 .active .header {
