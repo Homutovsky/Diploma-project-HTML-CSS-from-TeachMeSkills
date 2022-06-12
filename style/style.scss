@@ -129,12 +129,10 @@ $messengerHoverColor: #823bd3;
         align-items: center;
         border-bottom: 1px solid $hederBorderColor;
 
-
         @media (max-width: 767px) {
             border-bottom: none;
         }
     }
-
 
     &__wrap {
         display: flex;
@@ -151,7 +149,6 @@ $messengerHoverColor: #823bd3;
         }
 
     }
-
 
     &__burger {
         width: 20px;
@@ -181,6 +178,7 @@ $messengerHoverColor: #823bd3;
     &__list {
         display: flex;
         list-style-type: none;
+
         @media (max-width: 767px) {
             flex-direction: column;
             list-style-type: none;
@@ -201,6 +199,13 @@ $messengerHoverColor: #823bd3;
         line-height: 15px;
         text-transform: uppercase;
         animation: headerAnimation 0.4s;
+<<<<<<< HEAD
+=======
+
+        @media (max-width: 767px) {
+            animation: none;
+        }
+>>>>>>> 4603a2a66e79357df54c0eb7de3553261c9dbc5b
     }
 
     &__link {
@@ -211,22 +216,20 @@ $messengerHoverColor: #823bd3;
         text-decoration: none;
         border-bottom: 2px solid $hederBorderColorTransparent;
         color: $textColorWhite;
-        
+
         @media (max-width: 1024px) {
             font-size: 12px;
             line-height: 14px;
             padding: 45px 8px;
             min-width: 112px;
         }
+
         @media (max-width: 767px) {
             color: $textColorWhite;
             text-decoration: none;
             font-size: 30px;
             padding: 15px 0;
         }
-
-
-        
 
         &:hover {
             border-bottom: 2px solid $hederBorderColor;
@@ -238,6 +241,11 @@ $messengerHoverColor: #823bd3;
             color: $hederActiveColor;
             border-bottom: 2px solid $hederActiveColor;
             animation-fill-mode: none;
+
+            @media (max-width: 767px) {
+                animation: headerAnimation 0.4s;
+                border-bottom: 2px solid #dfb3d9;
+            }
         }
 
     }
