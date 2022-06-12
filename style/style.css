@@ -295,7 +295,7 @@
 }
 
 .active .header {
-  position: relative;
+  height: 100vh;
   background-color: #000000;
 }
 
@@ -314,6 +314,12 @@
 
 .active .header__burger {
   background-image: url(../media/header__burger-close.svg);
+}
+
+.active .header__item {
+  border-bottom: 2px solid transparent;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .active .header__nav {

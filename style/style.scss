@@ -201,7 +201,6 @@ $messengerHoverColor: #823bd3;
         line-height: 15px;
         text-transform: uppercase;
         animation: headerAnimation 0.4s;
-
     }
 
     &__link {
@@ -247,7 +246,7 @@ $messengerHoverColor: #823bd3;
 
 .active {
     .header {
-        position: relative;
+        height: 100vh;
         background-color: #000000;
     }
 
@@ -261,6 +260,10 @@ $messengerHoverColor: #823bd3;
         background-image: url(../media/header__burger-close.svg);
     }
 
+    .header__item{
+        border-bottom: 2px solid transparent;
+        animation:none;
+    }
     .header__nav {
         display: flex;
         flex-direction: column;
