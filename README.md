@@ -1,1 +1,1 @@
-# Diploma project HTML, CSS from TeachMeSkills
+# HTML and CSS
